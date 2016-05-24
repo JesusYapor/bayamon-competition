@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class problema3 {
 	public static void main(String[] args)
 	{
-		Scanner input = new Scanner(System.in);
+	 Scanner input = new Scanner(System.in);
 		
 		int n = 0;
 		int n2 = 0;
@@ -23,8 +23,9 @@ public class problema3 {
 				{
 					for (int c = 0; c < a1[r].length; c++)
 					{
-						System.out.print("Enter the numbers on row " + r + " column " + c );
+						System.out.print("Enter the numbers on row " + r + " column: " + c );
 						n = input.nextInt();
+                  a1[r][c] = n;
 								
 					}//for c
 					
@@ -32,13 +33,13 @@ public class problema3 {
 				
 			System.out.println("Enter second array" );
 			int[][]a2 = new int [4][4];   //inputs numbers into array2
-				for (int l = 0; l < a2.length; l++)
+				for (int r = 0; r < a2.length; r++)
 				{
-					for (int m = 0; m < a2[l].length; m++)
+					for (int c = 0; c < a2[r].length; c++)
 					{
-						System.out.print("Enter the numbers on row " + l + " column " + m);
+						System.out.print("Enter the numbers on row " + r + " column: " + c);
 						n2 = input.nextInt();
-						
+						a2[r][c] = n2;
 						
 					}//for m
 					
@@ -48,13 +49,11 @@ public class problema3 {
 				
 			if (problem.equals("+")) {
 				System.out.println("Suma");
-				for (int r = 0; r < a1.length; r++)
+				for (int r = 0; r < 4; r++)
 				{
-					System.out.print(n + n2);
-					
-					for (int c = 0; c < a2.length; c++)
+					for (int c = 0; c < 4; c++)
 					{
-						System.out.print(n + n2);
+						System.out.print(a1[r][c] + a2[r][c] + " \t");
 						
 					}//for c
 					
@@ -65,13 +64,11 @@ public class problema3 {
 			}
 			else if (problem.equals("-")) {
 				System.out.println("Resta");
-				for (int r = 0; r < a1.length; r++)
+				for (int r = 0; r < 4; r++)
 				{
-					System.out.print(n - n2);
-					
-					for (int c = 0; c < a2.length; c++)
+					for (int c = 0; c < 4; c++)
 					{
-						System.out.print(n - n2);
+						System.out.print(a1[r][c] - a2[r][c] + " \t");
 						
 					}//for c
 					
@@ -80,13 +77,11 @@ public class problema3 {
 			}
 			else if (problem.equals("*")) {
 				System.out.println("Multiplicacion");
-				for (int r = 0; r < a1.length; r++)
+				for (int r = 0; r < 4; r++)
 				{
-					System.out.print(n * n2);
-					
-					for (int c = 0; c < a2.length; c++)
+					for (int c = 0; c < 4; c++)
 					{
-						System.out.print(n * n2);
+						System.out.print(a1[r][c] * a2[r][c] + " \t");
 						
 					}//for c
 					
@@ -95,13 +90,11 @@ public class problema3 {
 			}
 			else if (problem.equals("/")) {
 				System.out.println("Divide");
-				for (int r = 0; r < a1.length; r++)
+				for (int r = 0; r < 4; r++)
 				{
-					System.out.print(n / n2);
-					
-					for (int c = 0; c < a2.length; c++)
+					for (int c = 0; c < 4; c++)
 					{
-						System.out.print(n / n2);
+						System.out.print(a1[r][c] / a2[r][c] + " \t");
 						
 					}//for c
 					
@@ -112,6 +105,7 @@ public class problema3 {
 			
 			
 		}
+		input.close();
 		
 	}//main
 }//class
